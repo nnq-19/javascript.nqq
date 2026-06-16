@@ -23,8 +23,10 @@
 .gallery {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Cho phép các hàng ảnh tự xuống dòng mượt mà nếu màn hình hẹp */
     gap: 15px;
     margin-top: 20px;
+    padding: 10px;
 }
 
 /* Định dạng các bức ảnh nhỏ */
@@ -34,11 +36,18 @@
     border: 3px solid #ccc;
     cursor: pointer;
     object-fit: cover;
-    transition: transform 0.2s;
+    transition: transform 0.2s, border-color 0.2s;
 }
 
 /* Hiệu ứng phóng nhẹ khi di chuột vào ảnh nhỏ */
 .preview:hover {
     border-color: #3498db;
+    transform: scale(1.05);
+}
+
+/* HIỆU ỨNG THÊM MỚI: Đổi màu viền xanh rực khi bấm phím Tab trúng ảnh */
+.preview:focus {
+    outline: none;
+    border-color: #e74c3c; /* Viền đỏ cam nổi bật báo hiệu vị trí Tab */
     transform: scale(1.05);
 }
