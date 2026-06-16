@@ -1,38 +1,48 @@
 /* ==========================================================================
-   HÀM 1: CẬP NHẬT HÌNH ẢNH VÀ CHỮ KHI DI CHUỘT VÀO (HOVER)
+   HÀM 1: CẬP NHẬT HÌNH ẢNH VÀ CHỮ KHI DI CHUỘT VÀO HOẶC FOCUS BÀN PHÍM
    ========================================================================== */
 function upDate(previewPic) {
-    // Yêu cầu 1: Sử dụng console.log để kiểm tra sự kiện có kích hoạt không
-    console.log("Sự kiện onmouseover đã kích hoạt thành công!");
-
-    // Yêu cầu 2: In ra thông tin alt và src của bức ảnh đang được trỏ tới (this)
+    // Thêm log console theo yêu cầu để kiểm tra sự kiện kích hoạt
+    console.log("Sự kiện cập nhật hình ảnh (Mouseover/Focus) đã kích hoạt thành công!");
     console.log("Văn bản thay thế (alt): " + previewPic.alt);
     console.log("Đường dẫn ảnh (src): " + previewPic.src);
 
-    // Tìm kiếm phần tử khung lớn thông qua ID 'image'
     var targetDiv = document.getElementById("image");
-
-    // Yêu cầu 3: Thay đổi nội dung chữ thành thuộc tính 'alt' của ảnh nhỏ
+    
+    // Thay đổi nội dung chữ và hình nền tương ứng với ảnh đang tương tác
     targetDiv.innerHTML = previewPic.alt;
-
-    // Yêu cầu 4: Thay đổi hình nền (background-image) thành đường dẫn 'src' của ảnh nhỏ
-    // Cú pháp chuẩn trong CSS là: url('đường_dẫn_ảnh')
     targetDiv.style.backgroundImage = "url('" + previewPic.src + "')";
 }
 
 /* ==========================================================================
-   HÀM 2: HOÀN TÁC TRẠNG THÁI KHI RỜI CHUỘT ĐI (LEAVE)
+   HÀM 2: HOÀN TÁC TRẠNG THÁI KHI RỜI CHUỘT HOẶC MẤT FOCUS (BLUR)
    ========================================================================== */
 function undo() {
-    // Sử dụng console.log để kiểm tra sự kiện rời chuột
-    console.log("Sự kiện onmouseleave đã kích hoạt thành công! Đang hoàn tác...");
+    console.log("Sự kiện hoàn tác (Mouseleave/Blur) đã kích hoạt thành công!");
 
-    // Tìm kiếm phần tử khung lớn thông qua ID 'image'
     var targetDiv = document.getElementById("image");
-
-    // Yêu cầu 5: Cập nhật hình nền về giá trị rỗng ban đầu (Hardcoded)
+    
+    // Trả về giá trị ban đầu
     targetDiv.style.backgroundImage = "url('')";
+    targetDiv.innerHTML = "Di chuột qua hoặc dùng phím Tab để hiển thị hình ảnh ở đây.";
+}
 
-    // Yêu cầu 6: Cập nhật lại văn bản gốc ban đầu (Hardcoded)
-    targetDiv.innerHTML = "Di chuột qua một hình ảnh bên dưới để hiển thị ở đây.";
+/* ==========================================================================
+   HÀM NÂNG CAO: TỰ ĐỘNG THÊM TABINDEX CHO ẢNH KHI TRANG WEB TẢI XONG (ONLOAD)
+   ========================================================================== */
+function addTabFocus() {
+    console.log("Trang web đã tải xong (onload)! Đang khởi tạo hệ thống tabindex...");
+
+    // Tóm lấy tất cả các bức ảnh nhỏ có class là 'preview'
+    var images = document.querySelectorAll(".preview");
+
+    // Viết một vòng lặp for để duyệt qua từng bức ảnh một
+    for (var i = 0; i < images.length; i++) {
+        console.log("Đang thêm thuộc tính tabindex cho bức ảnh số: " + (i + 1));
+        
+        // Thêm thuộc tính tabindex để ảnh có thể nhận tiêu điểm từ bàn phím
+        images[i].setAttribute("tabindex", "0");
+    }
+    
+    console.log("Hoàn thành! Tất cả các ảnh đã sẵn sàng cho trải nghiệm bàn phím.");
 }
