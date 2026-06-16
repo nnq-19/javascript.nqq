@@ -2,34 +2,66 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thư Viện Ảnh Du Lịch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư Viện Ảnh Du Lịch Việt Nam</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="addTabFocus()">
 
     <div id="image">
-        Di chuột qua một hình ảnh bên dưới để hiển thị ở đây.
+        Di chuột qua hoặc dùng phím Tab để hiển thị hình ảnh ở đây.
     </div>
 
     <div class="gallery">
         <img class="preview" 
-             alt="Vịnh Hạ Long - Kỳ quan thiên nhiên thế giới" 
-             src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/2/13/1147154/007_Rs.jpg" 
+             alt="Vịnh Hạ Long - Kỳ quan thiên nhiên thế giới mờ sương" 
+             src="https://static-images.vnncdn.net/files/publish/2022/7/27/ha-long-bay-1-852.jpg" 
              onmouseover="upDate(this)" 
-             onmouseleave="undo()">
+             onmouseleave="undo()"
+             onfocus="upDate(this)"
+             onblur="undo()">
 
         <img class="preview" 
-             alt="Đỉnh Fansipan - Nóc nhà Đông Dương mờ sương" 
-             src="https://hoamaitour.com/files/images2/dinh-fansipan-duoc-menh-danh-la-noc-nha-dong-duong.png" 
+             alt="Đỉnh Fansipan - Nóc nhà Đông Dương mây ngàn bồng bềnh" 
+             src="https://dulich.laichau.gov.vn/DataFiles/images/2%2C%20%C4%91%E1%BB%89nh%20n%C3%BAi.jpg" 
              onmouseover="upDate(this)" 
-             onmouseleave="undo()">
+             onmouseleave="undo()"
+             onfocus="upDate(this)"
+             onblur="undo()">
 
         <img class="preview" 
-             alt="Phố cổ Hội An - Lồng đèn lung linh về đêm" 
-             src="https://viptrip.vn/public/upload/news/pho-co-hoi-an_31-12-2023_613395856.jpg" 
+             alt="Phố cổ Hội An - Lồng đèn hoa đăng lung linh về đêm" 
+             src="https://viptrip.vn/public/upload/news/pho-co-hoi-an_31-12-2023_613395856.jpghttps://viptrip.vn/public/upload/news/pho-co-hoi-an_31-12-2023_613395856.jpg" 
              onmouseover="upDate(this)" 
-             onmouseleave="undo()">
+             onmouseleave="undo()"
+             onfocus="upDate(this)"
+             onblur="undo()">
+
+        <img class="preview" 
+             alt="Tràng An Ninh Bình - Non nước hữu tình, hang động kỳ vĩ" 
+             src="https://dulichninhbinh.com.vn/mypicture/images/2020/10/Trang-An-2.jpg" 
+             onmouseover="upDate(this)" 
+             onmouseleave="undo()"
+             onfocus="upDate(this)"
+             onblur="undo()">
+
+        <img class="preview" 
+             alt="Đại Nội Huế - Công trình kiến trúc cung đình cổ kính" 
+             src="https://sacotravel.com/wp-content/uploads/2023/07/Dai-Noi-Hue.jpg" 
+             onmouseover="upDate(this)" 
+             onmouseleave="undo()"
+             onfocus="upDate(this)"
+             onblur="undo()">
+
+        <img class="preview" 
+             alt="Chợ nổi Cái Răng - Nét văn hóa sông nước miền Tây" 
+             src="https://infotravel-tour.com/wp-content/uploads/2024/11/cho-noi-2-16759091539861274444270-1.webp" 
+             onmouseover="upDate(this)" 
+             onmouseleave="undo()"
+             onfocus="upDate(this)"
+             onblur="undo()">
     </div>
+
     <script src="jv.js"></script>
 </body>
 </html>
